@@ -17,7 +17,7 @@ jobs:
     # The type of runner that the job will run on
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        platform: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.platform }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -34,5 +34,5 @@ jobs:
 
     # Runs the build.
     - name: Test Build
-      run: python -m eel main.py web --add-data "createconfig.py;createconfig" --onefile --noconcole
+      run: python -m eel main.py web --add-data "createconfig.py:createconfig" --onefile --noconcole
 
