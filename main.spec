@@ -1,0 +1,33 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+
+a = Analysis(['main.py'],
+             pathex=['/home/willf/Documents/todo-app/customizable'],
+             binaries=[],
+             datas=[('/home/willf/.local/lib/python3.8/site-packages/eel/eel.js', 'eel'), ('web', 'web'), ("createconfig.py", "createconfig")],
+             hiddenimports=['bottle_websocket', 'packaging.version', 'packaging.specifiers', 'packaging.requirements', 'pkg_resources.py2_warn'],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          [],
+          name='main',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=False )
