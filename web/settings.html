@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TODO - Settings</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <script type='text/javascript' src='/eel.js'></script>
+    <body>
+        <h1>TODO - Settings</h1>
+        <h2>The Place To Customize All The Things!</h2>
+        <hr>
+        <h3>Background</h3>
+        <form onsubmit="uploadfile()">
+            <label for='filepath'>File Path: </label>
+            <input type='text' id="filepath" name='filepath'>
+            <input type='submit' value="Swap It!"> 
+        </form>
+        <br>
+        <form onsubmit="change_background_color()">
+            <label for="color" style="padding-left: 5px;">Background Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <hr>
+        <h3>Heading</h3>
+        <form onsubmit="change_title_color()">
+            <label for="color" style="padding-left: 5px;">Title Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <br>
+        <form onsubmit="change_subtitle_color()">
+            <label for="color" style="padding-left: 5px;">Subtitle Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <hr>
+        <h3>Horizontal Lines</h3>
+        <form onsubmit="change_line_color()">
+            <label for="color" style="padding-left: 5px;">Line Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <form onsubmit="change_line_width()">
+            <label for="width" style="padding-left: 5px;">Line Width:</label>
+            <input type="number" value="2px" style="padding-left: 5px;" name="width"> px
+            <input type="submit" value="Swap It!">
+        </form>
+        <form onsubmit="change_line_type()">
+            <label for="width" style="padding-left: 5px;">Line Type:</label>
+            <select name="type">
+                <option value="solid">Solid</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+                <option value="none">None</option>
+                <option value="hidden">Hidden</option>
+            </select>
+            <input type="submit" value="Swap It!">
+        </form>
+        <hr>
+        <h3>Item</h3>
+        <hr>
+        <h4>Check Mark</h4>
+        <form onsubmit="change_check_color()">
+            <label for='check_color'>Check Color: </label>
+            <input type='color' name='check_color'>
+            <input type='submit' value="Swap It!"> 
+        </form> 
+        <form onsubmit="change_check_hover_color()">
+            <label for='check_hover_color'>Check Hover Color: </label>
+            <input type='color' name='check_hover_color'>
+            <input type='submit' value="Swap It!"> 
+        </form> 
+        <hr>
+        <h4>Item Background</h4>
+        <form onsubmit="change_item_background()">
+            <label for='filepath'>Image Path: </label>
+            <input type='text' id="filepath" name='item_background_path'>
+            <input type='submit' value="Swap It!"> 
+        </form>
+        <br>
+        <form onsubmit="change_item_background_color()">
+            <label for="color" style="padding-left: 5px;">Item Background Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="item_background_color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <hr>
+        <h4>Item Border</h4>
+        <form onsubmit="change_item_border_color()">
+            <label for="color" style="padding-left: 5px;">Border Color:</label>
+            <input type="color" value="#000" style="padding-left: 5px;" name="item_border_color">
+            <input type="submit" value="Swap It!">
+        </form>
+        <form onsubmit="change_item_border_width()">
+            <label for="width" style="padding-left: 5px;">Border Width:</label>
+            <input type="number" value="2px" style="padding-left: 5px;" name="item_border_width"> px
+            <input type="submit" value="Swap It!">
+        </form>
+        <form onsubmit="change_item_border_type()">
+            <label for="width" style="padding-left: 5px;">Border Type:</label>
+            <select name="item_border_type">
+                <option value="solid">Solid</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="double">Double</option>
+                <option value="groove">Groove</option>
+                <option value="ridge">Ridge</option>
+                <option value="inset">Inset</option>
+                <option value="outset">Outset</option>
+                <option value="none">None</option>
+                <option value="hidden">Hidden</option>
+            </select>
+            <input type="submit" value="Swap It!">
+        </form>
+        <hr>
+        <h3>Config File</h3>
+        <h4>Load Config</h4>
+        <form onsubmit="load_config_file()">
+            <label for='user'>Config User: </label>
+            <input type='text' name='user'>
+            <input type='submit' value="Swap It All!"> 
+        </form> 
+        <hr>
+        <h4>Upload Config</h4>
+        <form onsubmit="upload_config()">
+            <label for='filepath'>Your Username: </label>
+            <input type='text' name='your_username'>
+            <input type='submit' value="Upload It!"> 
+        </form> 
+        <hr>
+        <a href="/index.html">Home</a>
+    </body>
+    <script src='./settings/js/script.js'></script>
+</html>

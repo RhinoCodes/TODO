@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Anything TODO</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <script type='text/javascript' src='/eel.js'></script>
+    <script>
+        function new_item(){
+          let item_body = document.getElementById("new").value
+          eel.newItem(item_body)
+          document.getElementById("todos").innerHTML += '<div id="block"><h2 style="mouse: pointer;" id="title">'+item_body+'</h2><h2 id="done" onclick="remove(this.parentElement)">&#10003;</h2></div>'
+          document.getElementById("new").value = ""
+        }
+        async function load(){
+          let weekly = await eel.loadjson("weekly.json")();
+          if(weekly.length == 0){
+            let weekly = await startWeek();
+          }
+          console.log(weekly)
+          for (let i=0; i<weekly.length; i++){
+            let item_body = weekly[i];
+            document.getElementById("todos").innerHTML += '<div id="block"><h2 style="mouse: pointer;" id="title">'+item_body+'</h2><h2 id="done" onclick="remove(this.parentElement)">&#10003;</h2></div>'
+          }
+        }
+
+        async function startWeek(){
+          let to_add = await eel.startWeek()()
+          console.log(to_add)
+          for(i=0; i<to_add.length; i++){
+            document.getElementById("new").value = to_add[i];
+            new_item();
+          }
+        }
+
+        async function remove(obj){
+          let weekly = await eel.loadjson("weekly.json")();
+          obj.remove()
+          eel.done_with_one(obj.getElementsByTagName("h2")[0].innerHTML)
+        }
+        async function clear(){
+          localStorage.clear();
+          document.getElementById("todos").innerHTML = ""
+        }
+        load();
+    </script>
+    <body>
+    
+        <h1 id="center">Anything TODO</h1>
+        <h2 id="center">The goto to-do list for ANYTHING!</h2>
+        <br>
+        <div id="todos">
+            
+        </div>
+        </body>
+        <hr>
+        <div id="form">
+          <input type="text" id="new">
+          <br>
+          <button onclick="new_item()">Create</button>
+          <br>
+          <button onclick="clear()">Clear</button>
+          <br>
+          
+        </div>
+        <div id="bottom"><img id='tosettings' src='settingsicon.png' onclick="location.href = 'settings.html'"></div>
+        
+</html>

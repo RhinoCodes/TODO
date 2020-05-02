@@ -1,0 +1,111 @@
+body{
+    background: gray;
+    background-image: url("../background.jpg");
+    text-align: center;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h2{
+    color: white;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#center{
+    text-align: center;
+}
+
+h1{
+    color: black;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#block{
+    background: rgb(75, 75, 75);
+    border: white 2px solid;
+    background-image: url("../item-background.jpg");
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+#block #title{  
+    float: left;
+    color: black;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+hr{
+    border: 0;
+    border-top: white 2px dashed;
+    color: transparent;
+    border-radius: 2px;
+}
+
+#done {
+    color: black;
+    padding-top: 7px;
+    float: right;
+    padding-right: 8px;
+    display: block;
+    font-size: 1.8em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color ease-in-out 150ms;
+    margin: 0;
+    cursor: pointer;
+}
+
+#form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#done:hover{
+    color: rgb(2, 209, 2);
+}
+
+@media only screen and (max-width: 600px) {
+  #block{
+    width: 250px;
+  }
+}
+
+#tosettings {
+    float: right;
+    width: 20%;
+    height: 20%;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all ease-in-out 500ms;
+   
+    
+   
+}
+
+#bottom {
+    position: absolute;
+    bottom: 9px;
+    padding-right: 9px;
+    display: inline-block;
+}
+
+#tosettings:hover{
+    transform: rotate(90deg);
+}
