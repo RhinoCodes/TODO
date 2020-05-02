@@ -34,5 +34,4 @@ jobs:
 
     # Runs the build.
     - name: Test Build
-      run: python -m eel main.py web --add-data "createconfig.py:createconfig" --onefile --noconcole
-
+      run: python -m eel main.py web --add-data "createconfig.py:createconfig" --onefile
