@@ -31,7 +31,7 @@ jobs:
       run: |
         python -m pip install PyInstaller
         python -m pip install eel 
-        pwd
+        pwd >> test.n
 
     # Runs the build.
     - name: Test Build
