@@ -1,5 +1,5 @@
 # TODO
-![Build](https://github.com/RhinoCodes/TODO/workflows/Build%20TODO/badge.svg)
+![Build](https://github.com/RhinoCodes/TODO/workflows/Build/badge.svg)
 
 This TODO was originally developed for helping me focus on school.
 I upgraded it to act as a Desktop app and have loads of settings, try it
